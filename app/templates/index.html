@@ -1,3 +1,4 @@
+{% extends 'base.html'%}
 <h1>Welcome to Mambo Leo News</h1>
 <body>
     <!-- sources section  -->
@@ -5,6 +6,8 @@
      <ul>
         {% for source in sources %}
             <li>{{ source.id}}</li>
+            <li>{{ source.name}}</li>
+            <a href="/article/{{source.id}}">{{source.id}}</a>
         {% endfor %}
     </ul>
 </body>

@@ -42,12 +42,12 @@ def process_results(source_list):
         name = source_item.get('name')
         description = source_item.get('description')
         url = source_item.get('url')
-        category = source_item.get('category')
-        language = source_item.get('language')
-        country = source_item.get('country')
+        # category = source_item.get('category')
+        # language = source_item.get('language')
+        # country = source_item.get('country')
         
         if id:
-            source_object = Source(id,name,description,url,category,language,country)
+            source_object = Source(id,name,description,url)
             source_results.append(source_object)
 
     return source_results 
@@ -78,10 +78,10 @@ def process_articles_results(news):
         author = article.get('author')
         description = article.get('description')
         time = article.get('publishedAt')
-        image = article.get('urlToImage')
-        url = article.get('url')
+        url = article.get('urlToImage')
+        image = article.get('url')
         title = article.get ('title')
-        article_objects = article(author,description,time,image,url,title)
+        article_objects = Article(author,description,time,image,url,title)
 
         article_source_results.append(article_objects)
 
