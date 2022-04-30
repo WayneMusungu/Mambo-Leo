@@ -1,3 +1,6 @@
+from pickle import TRUE
+
+
 class Config:
     '''
     General configuration parent class
@@ -20,3 +23,5 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
+    
+    DEBUG = TRUE
