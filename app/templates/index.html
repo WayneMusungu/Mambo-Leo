@@ -1,13 +1,10 @@
 <h1>Welcome to Mambo Leo News</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mambo Leo News</title>
-</head>
 <body>
-    
+    <!-- sources section  -->
+    <h3> Sources</h3>
+     <ul>
+        {% for source in sources %}
+            <li>{{ source.id}}</li>
+        {% endfor %}
+    </ul>
 </body>
-</html>
