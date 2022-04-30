@@ -58,13 +58,13 @@ def process_results(source_list):
 
 
 def article_source(id):
-    article_source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={)'.format(id,api_key)
-
-    # print(article_source_url)
+    article_source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
+    print(article_source_url)
     with urllib.request.urlopen(article_source_url) as url:
         article_source_data = url.read()
         article_source_response = json.loads(article_source_data)
 
+        article_source_results = None
 
         if article_source_response['articles']:
             article_source_list = article_source_response['articles']
@@ -85,10 +85,29 @@ def process_articles_results(news):
         url = article.get('urlToImage')
         image = article.get('url')
         title = article.get ('title')
-        article_objects = Article(author,description,time,image,url,title)
 
-        article_source_results.append(article_objects)
+        if url:
+            article_objects = article(author,description,time,image,url,title)
+            article_source_results.append(article_objects)
 
-    return article_source_results 
+    return article_source_results
 
+
+def get_category(cat_name):
+    '''
+    function that gets the response to the category json
+    '''
+    get_category_url = cat_url.format(cat_name,api_key)
+    print(get_category_url)
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        get_cartegory_response = json.loads(get_category_data)
+
+        get_cartegory_results = None
+
+        if get_cartegory_response['articles']:
+            get_cartegory_list = get_cartegory_response['articles']
+            get_cartegory_results = process_articles_results(get_cartegory_list)
+
+    return get_cartegory_results
 
