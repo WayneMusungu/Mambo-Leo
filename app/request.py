@@ -1,6 +1,6 @@
 from app import app
 import urllib.request,json
-from .models import sources,articles
+from .models import sources,articles,category
 
 Source = sources.Source
 

@@ -3,15 +3,23 @@
 <h1>Welcome to Mambo Leo News</h1>
 
 <body>
-    <!-- sources section  -->
-    <h3> Sources</h3>
-     <ul>
-        {% for source in sources %}
-            <li>{{ source.id}}</li>
-            <li>{{ source.name}}</li>
-            <a href="/article/{{source.id}}">{{source.id}}</a>
-        {% endfor %}
-    </ul>
+    <div class="card">
+        <div class="col-md-4">
+            <div class="card-header">
+                <h4>Browse News Sources</h4>
+            </div>
+            <div class="list-group list-group-flush scrolly">
+                <ul>
+                    {% for source in sources %}
+                    <a href="/article/{{source.id}}">
+                        <p class="text-capitalize text-muted">{{source.id}}</p>
+                    </a>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 {% endblock %}
