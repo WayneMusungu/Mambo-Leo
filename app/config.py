@@ -5,8 +5,8 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEWS_API_SOURCE_URL=' https://newsapi.org/v2/top-headlines/sources?apiKey={}'
-    CAT_API_URL='https://newsapi.org/v2/sources?category={}&language=en&apiKey={}'
+    NEWS_API_SOURCE_URL=' https://newsapi.org/v2/sources?apiKey={}'
+    CAT_API_URL='https://newsapi.org/v2/everything?q={}&sortBy=relevancy&apiKey={}'
     
    
 

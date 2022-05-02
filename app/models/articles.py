@@ -1,12 +1,14 @@
-class Article:
-    '''
-    Class that instantiates objects of the news article objects of the news sources
-    '''
-    def __init__(self,author,description,time,url,image,title):
 
+  
+class Articles:
+    '''
+    News class to define News Objects
+    '''
+
+    def __init__(self, author, title, description, url, urlToImage, content):
         self.author = author
+        self.title = title
         self.description = description
-        self.time = time
         self.url = url
-        self.image = image
-        self.title = title 
+        self.urlToImage = urlToImage
+        self.content = content
