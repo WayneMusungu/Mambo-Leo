@@ -112,4 +112,3 @@ def get_category(cat_name):
             get_cartegory_results = process_articles_results(get_cartegory_list)
 
     return get_cartegory_results
-

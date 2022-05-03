@@ -33,4 +33,3 @@ def categories(cat_name):
     title = f'{cat_name}'
     cat = cat_name
     return render_template('categories.html',title = title,category=category, cat= cat_name)
-
