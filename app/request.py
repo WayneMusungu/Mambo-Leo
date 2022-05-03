@@ -20,7 +20,7 @@ def get_source():
     '''
     Function that gets the json response to url request
     '''
-    get_source_url= source_url.format('bdb929e9f536492187b6e3a21154bd50')
+    get_source_url= source_url.format(api_key)
     # print(get_source_url)
     with urllib.request.urlopen(get_source_url) as url:
         get_sources_data = url.read()
@@ -111,20 +111,23 @@ def get_category(cat_name):
 
     return get_cartegory_results
 
-def get_headlines():
-    '''
-    function that gets the response to the category json
-    '''
-    get_headlines_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
-    # print(get_headlines_url)
-    with urllib.request.urlopen(get_headlines_url) as url:
-        get_headlines_data = url.read()
-        get_headlines_response = json.loads(get_headlines_data)
 
-        get_headlines_results = None
+# https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=bdb929e9f536492187b6e3a21154bd50
 
-        if get_headlines_response['articles']:
-            get_headlines_list = get_headlines_response['articles']
-            get_headlines_results = process_articles_results(get_headlines_list)
+# def get_headlines():
+#     '''
+#     function that gets the response to the category json
+#     '''
+#     get_headlines_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
+#     # print(get_headlines_url)
+#     with urllib.request.urlopen(get_headlines_url) as url:
+#         get_headlines_data = url.read()
+#         get_headlines_response = json.loads(get_headlines_data)
 
-    return get_headlines_results
+#         get_headlines_results = None
+
+#         if get_headlines_response['articles']:
+#             get_headlines_list = get_headlines_response['articles']
+#             get_headlines_results = process_articles_results(get_headlines_list)
+
+#     return get_headlines_results
