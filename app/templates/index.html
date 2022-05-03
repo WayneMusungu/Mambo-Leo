@@ -1,19 +1,22 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1>Welcome to Mambo Leo News</h1>
+
 
 <body>
-    <div class="card">
-        <div class="col-md-4">
+    <div class="container">
+        <h1>Welcome to Mambo Leo News</h1>
+        <div class="col-md-12">
             <div class="card-header">
-                <h4>Browse News Sources</h4>
+                <h2>Browse News Sources</h2>
             </div>
             <div class="list-group list-group-flush scrolly">
                 <ul>
                     {% for source in sources %}
-                    <a href="/article/{{source.id}}">
-                        <p class="text-capitalize text-muted">{{source.id}}</p>
-                    </a>
+                    <h1><a href="/article/{{source.id}}">
+                        <p class="text-capitalize text-bold">{{source.id}}</p>
+                    </a></h1>
+                    <h3>{{source.description}}</h3>
+
                     {% endfor %}
                 </ul>
             </div>
