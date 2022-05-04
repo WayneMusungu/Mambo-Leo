@@ -1,0 +1,3 @@
+NEWS_API_KEY = 'bdb929e9f536492187b6e3a21154bd50'
+
+SECRET_KEY = '*$Z@1*bzqRo7Vhh'
